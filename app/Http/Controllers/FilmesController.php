@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Filme;
 use Illuminate\Http\Request;
 
-class FilmeController extends Controller
+class FilmesController extends Controller
 {
     public function index(){
         $dados = Filme::all();
@@ -24,7 +24,7 @@ class FilmeController extends Controller
         $dados = $form->validate([
         
             'nome' => 'required|min:3',
-            'sinopse' => 'required|integer',
+            'sinopse' => 'required',
             'ano'=> 'required',
             'categoria'=> 'required',
             'imagem' => 'required',
@@ -58,7 +58,7 @@ class FilmeController extends Controller
         {
         $dados = $form->validate([
         'nome' => 'required|max:255',
-        'sinopse' => 'required|integer',
+        'sinopse' => 'required',
         'ano'=> 'required',
         'categoria'=> 'required',
         'imagem' => 'required',

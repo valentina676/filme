@@ -28,7 +28,7 @@
             <td class="text-left py-3 px-4">{{$filme['sinopse']}}</td>
             <td class="text-left py-3 px-4">{{$filme['ano']}}</td>
             <td class="text-left py-3 px-4">{{$filme['categoria']}}</td>
-            <td class="text-left py-3 px-4">{{$filme['imagem']}}</td>
+            <td class="text-left py-3 px-4"><img src="{{asset("img/".$filme['imagem'])}}" alt=""></td>
             <td class="text-left py-3 px-4">{{$filme['link']}}</td>
             <td class="text-left py-3 px-4"><a class="inline-block px-3 py-1 font-semibold text-green-900 leading-tight bg-red-400 opacity-100 rounded-full"href="{{route('filmes.apagar', $filme['id'])}}">Apagar</a></td>
             <td class="text-left py-3 px-4"><a class="inline-block px-3 py-1 font-semibold text-green-900 leading-tight bg-blue-400 opacity-100 rounded-full" href="{{route('filmes.editar', $filme['id'])}}">Editar</a></td>

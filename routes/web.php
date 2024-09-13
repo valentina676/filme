@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\FilmeController;
+
+use App\Http\Controllers\FilmesController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,19 +10,19 @@ Route::get('/', function () {
 })->name('index');
 
 
-Route::get('/filmes', [FilmeController::class, 'index'])->name('filmes');
+Route::get('/filmes', [FilmesController::class, 'index'])->name('filmes');
 
-Route::get('/filmes/cadastrar', [FilmeController::class, 'cadastrar'])->name('filmes.cadastrar');
+Route::get('/filmes/cadastrar', [FilmesController::class, 'cadastrar'])->name('filmes.cadastrar');
 
-Route::post('/filmes/cadastrar',[FilmeController::class, 'gravar'])->name('filmes.gravar');
+Route::post('/filmes/cadastrar',[FilmesController::class, 'gravar'])->name('filmes.gravar');
 
-Route::get('/filmes/apagar{filme}',[FilmeController::class, 'apagar'])->name('filmes.apagar');
+Route::get('/filmes/apagar{filme}',[FilmesController::class, 'apagar'])->name('filmes.apagar');
 
-Route::delete('/filmes/apagar{filme}',[FilmeController::class, 'deletar']);
+Route::delete('/filmes/apagar{filme}',[FilmesController::class, 'deletar']);
 
-Route::get('/filmes/editar/{filme}', [FilmeController::class, 'editar'])->name('filmes.editar');
+Route::get('/filmes/editar/{filme}', [FilmesController::class, 'editar'])->name('filmes.editar');
 
-Route::put('/filmes/editar/{filme}', [FilmeController::class, 'editarGravar']);
+Route::put('/filmes/editar/{filme}', [FilmesController::class, 'editarGravar']);
 
 Route::prefix('usuarios')->middleware('auth')->group(function(){
     Route::get('/', [UsuariosController::class, 'index'])->name('usuarios');

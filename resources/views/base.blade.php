@@ -1,4 +1,3 @@
-{{-- resources/viws/base.blade.php --}}
 <html>
     <head>
         <title>@yield('titulo')</title>

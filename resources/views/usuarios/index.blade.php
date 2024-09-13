@@ -1,8 +1,7 @@
-{{-- resources/views/animais/index.blade.php --}}
 
 @extends('base')
 
-@section('titulo', 'Animais para Adoção')
+@section('titulo', ' Catalogo de Filmes')
 
 @section('conteudo')
 <p>
