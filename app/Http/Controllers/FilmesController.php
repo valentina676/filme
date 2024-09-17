@@ -41,7 +41,7 @@ class FilmesController extends Controller
 
     public function apagar(Filme $filme){ //apagar vai mostrar tela a confirmação 
         return view('filmes.apagar', [
-            'Filme'=> $filme,
+            'filme'=> $filme,
         ]);
     }
 
@@ -52,7 +52,7 @@ class FilmesController extends Controller
     }
 
     public function editar(Filme $filme) {
-        return view('filmes/editar', ['Filme' => $filme]);
+        return view('filmes/editar', ['filme' => $filme]);
        }
        public function editarGravar(Request $form, Filme $filme)
         {
@@ -67,6 +67,6 @@ class FilmesController extends Controller
 
         $filme->fill($dados);
         $filme->save();
-        return redirect()->route('Filme');
+        return redirect()->route('filme');
         }
 }
